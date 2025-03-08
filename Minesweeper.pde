@@ -135,7 +135,7 @@ public class MSButton
            int minesFlagged = 0;
            for (int row = 0; row < NUM_ROWS; row++)
              for (int col = 0; col < NUM_COLS; col++)
-               if (buttons[row][col].isFlagged()) minesFlagged++;
+               if (buttons[row][col].isFlagged() && mines.contains(buttons[row][col])) minesFlagged++;
                else if (buttons[row][col].clicked) tilesClicked++;
            if (tilesClicked + minesFlagged == tilesToWin && (isFlagged() || !mines.contains(this)) && lose == false) win = true;
        
